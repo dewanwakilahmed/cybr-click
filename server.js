@@ -8,20 +8,23 @@ const profileRoute = require("./routes/api/profile");
 
 const app = express();
 
-// Connect to Cybr Click Database
+// Connect to CYBR CLICK Database
 connectDB();
 
-const PORT = process.env.PORT || 5000;
+// Initialize Middlewawre
+app.use(express.json({ extended: false })); // Request & Body Validation
 
 app.get("/", (req, res) =>
-  res.send("Cybr Click App API is running and ready to process requests...")
+  res.send("CYBR CLICK App API is running and ready to process requests...")
 );
 
-// Cybr Click Server Routes
+// CYBR CLICK Server Routes
 app.use("/api/user", userRoute);
 app.use("/api/auth", authRoute);
 app.use("/api/profile", profileRoute);
 
+const PORT = process.env.PORT || 5000;
+
 app.listen(PORT, () =>
-  console.log(`Cybr Click App server is running on port ${PORT}...`)
+  console.log(`CYBR CLICK App server is running on port ${PORT}...`)
 );

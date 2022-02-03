@@ -7,7 +7,7 @@ const connectDB = async () => {
   try {
     await mongoose.connect(db);
     console.log(
-      "From Cybr Click Database cybr-click-main cluster is connected successfully..."
+      "From CYBR CLICK Database cybr-click-main cluster is connected successfully..."
     );
   } catch (err) {
     console.log(err.message);
