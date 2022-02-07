@@ -1,3 +1,4 @@
 {
-  "mongoURI": "mongodb+srv://dewan123:dewan123@cybr-click-main.t42w1.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
+  "mongoURI": "mongodb+srv://dewan123:dewan123@cybr-click-main.t42w1.mongodb.net/CybrClickDatabase?retryWrites=true&w=majority",
+  "jwtSecret": "CybrClickSecretToken"
 }
