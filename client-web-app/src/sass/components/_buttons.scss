@@ -1,0 +1,17 @@
+.btn {
+  border: none;
+  border-radius: 0.5em;
+  color: white;
+  cursor: pointer;
+}
+
+.continue-btn,
+.login-btn,
+.register-btn {
+  background-color: #ff7643;
+  padding: 0.5em 7.5em;
+
+  &:hover {
+    background-color: #fc5f26;
+  }
+}
