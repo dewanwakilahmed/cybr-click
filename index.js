@@ -1,10 +1,13 @@
+process.env["NODE_CONFIG_DIR"] = __dirname + "/src/configs";
+
 const express = require("express");
-const connectDB = require("./config/db");
+
+const connectDB = require("./src/configs/db.config");
 
 // Import Routes
-const userRoute = require("./routes/api/user");
-const authRoute = require("./routes/api/auth");
-const profileRoute = require("./routes/api/profile");
+const userRoutes = require("./src/routes/api/user");
+const authRoutes = require("./src/routes/api/auth");
+const profileRoutes = require("./src/routes/api/profile");
 
 const app = express();
 
@@ -19,9 +22,9 @@ app.get("/", (req, res) =>
 );
 
 // CYBR CLICK Server Routes
-app.use("/api/user", userRoute);
-app.use("/api/auth", authRoute);
-app.use("/api/profile", profileRoute);
+app.use("/api/user", userRoutes);
+app.use("/api/auth", authRoutes);
+app.use("/api/profile", profileRoutes);
 
 const PORT = process.env.PORT || 5000;
 

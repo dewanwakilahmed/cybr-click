@@ -39,7 +39,7 @@ router.post(
       if (user) {
         return res
           .status(400)
-          .json({ msg: "Email already taken! Please use a different email." });
+          .json({ msg: "Email already taken. Please use a different email!" });
       }
 
       // Fetch User's Gravatar from Email

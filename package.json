@@ -2,10 +2,10 @@
   "name": "cybr-click",
   "version": "1.0.0",
   "description": "E-commerce + Vendor Web App",
-  "main": "server.js",
+  "main": "index.js",
   "scripts": {
-    "start": "node server",
-    "server": "nodemon server",
+    "start": "node index",
+    "server": "nodemon index",
     "client": "npm start --prefix client-web-app",
     "dev": "concurrently \"npm run server\" \"npm run client\""
   },
