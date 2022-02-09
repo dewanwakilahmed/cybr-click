@@ -105,4 +105,26 @@ router.post(
   }
 );
 
+// @route    GET api/profile/me
+// @desc     Fetch Authenticated/LoggedIn User Profile
+// @access   Private
+router.get("/me", authMiddleware, async (req, res) => {
+  try {
+    const profile = await Profile.findOne({ user: req.user.id }).populate(
+      "user",
+      ["name", "avatar"]
+    );
+
+    // If Profile doesn't exist yet
+    if (!profile) {
+      return res.status(400).json({ msg: "Profile doesn't exist yet!" });
+    }
+
+    res.json(profile);
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).json({ msg: "Fetch Profile Unsuccessful. Server Error!" });
+  }
+});
+
 module.exports = router;
