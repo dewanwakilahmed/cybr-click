@@ -4,17 +4,20 @@ const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const config = require("config");
 
+// Middlewares
 const authMiddleware = require("../../middlewares/auth");
 
+// Models
 const User = require("../../models/User");
+
+// Configs
+const jwtSecret = config.get("jwtSecret");
 
 const router = express.Router();
 
-const jwtSecret = config.get("jwtSecret");
-
 // @route    GET api/auth
 // @desc     Verify Authentication Token
-// @access   Public
+// @access   Private
 router.get("/", authMiddleware, async (req, res) => {
   try {
     const user = await User.findById(req.user.id).select("-password");
@@ -39,7 +42,6 @@ router.post(
   async (req, res) => {
     // Validation Check
     const errors = validationResult(req);
-    console.log(errors);
     if (!errors.isEmpty()) {
       return res.status(400).json({ errors: errors.array() });
     }
