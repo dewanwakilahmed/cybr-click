@@ -139,9 +139,34 @@ router.get("/all", async (req, res) => {
     ]);
     res.json(profiles);
   } catch (err) {
+    console.error(err.message);
     res
       .status(500)
       .json({ msg: "Fetch All Profiles Unsuccessful. Server Error!" });
+  }
+});
+
+// @route    GET api/profile/user/:user_id
+// @desc     Fetch Specific Profile by User ID
+// @access   Public
+router.get("/user/:user_id", async (req, res) => {
+  try {
+    const profile = await Profile.findOne({
+      user: req.params.user_id,
+    }).populate("user", ["name", "avatar", "dateOfRegistration"]);
+
+    // If Profile doesn't exist
+    if (!profile) {
+      return res.status(400).json({ msg: "Profile Not Found!" });
+    }
+    res.json(profile);
+  } catch (err) {
+    if (err.kind === "ObjectId") {
+      res
+        .status(500)
+        .json({ msg: "Fetch Profile Unsuccessful. Server Error!" });
+    }
+    console.error(err.message);
   }
 });
 
