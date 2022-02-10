@@ -5,11 +5,16 @@ const jwt = require("jsonwebtoken");
 const config = require("config");
 const { check, validationResult } = require("express-validator");
 
+// Middlewares
+const authMiddleware = require("../../middlewares/auth");
+
+// Models
 const User = require("../../models/User");
 
-const router = express.Router();
-
+// Configs
 const jwtSecret = config.get("jwtSecret");
+
+const router = express.Router();
 
 // @route    POST api/user/register
 // @desc     Register User
@@ -79,5 +84,19 @@ router.post(
     }
   }
 );
+
+// @route    DELETE api/user/me
+// @desc     Delete User
+// @access   Private
+router.delete("/me", authMiddleware, async (req, res) => {
+  try {
+    await User.findOneAndRemove({ _id: req.user.id });
+    console.log("User Deleted Sucessfully!");
+    res.json({ msg: "User Deleted!" });
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).json({ msg: "User Deletion Unsuccessful. Server Error!" });
+  }
+});
 
 module.exports = router;

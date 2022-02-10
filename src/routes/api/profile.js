@@ -5,7 +5,6 @@ const { check, validationResult } = require("express-validator");
 const authMiddleware = require("../../middlewares/auth");
 
 // Models
-const User = require("../../models/User");
 const Profile = require("../../models/Profile");
 
 const router = express.Router();
@@ -120,6 +119,7 @@ router.get("/me", authMiddleware, async (req, res) => {
       return res.status(400).json({ msg: "Profile doesn't exist yet!" });
     }
 
+    console.log("Fetched Own Profile Sucessfully!");
     res.json(profile);
   } catch (err) {
     console.error(err.message);
@@ -137,6 +137,7 @@ router.get("/all", async (req, res) => {
       "avatar",
       "dateOfRegistration",
     ]);
+    console.log("Fetched All Profiles Sucessfully!");
     res.json(profiles);
   } catch (err) {
     console.error(err.message);
@@ -159,6 +160,8 @@ router.get("/user/:user_id", async (req, res) => {
     if (!profile) {
       return res.status(400).json({ msg: "Profile Not Found!" });
     }
+
+    console.log("Fetched Specific Profile Sucessfully!");
     res.json(profile);
   } catch (err) {
     if (err.kind === "ObjectId") {
