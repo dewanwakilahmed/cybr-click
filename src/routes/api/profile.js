@@ -127,4 +127,22 @@ router.get("/me", authMiddleware, async (req, res) => {
   }
 });
 
+// @route    GET api/profile/all
+// @desc     Fetch All Profiles
+// @access   Public
+router.get("/all", async (req, res) => {
+  try {
+    const profiles = await Profile.find().populate("user", [
+      "name",
+      "avatar",
+      "dateOfRegistration",
+    ]);
+    res.json(profiles);
+  } catch (err) {
+    res
+      .status(500)
+      .json({ msg: "Fetch All Profiles Unsuccessful. Server Error!" });
+  }
+});
+
 module.exports = router;
