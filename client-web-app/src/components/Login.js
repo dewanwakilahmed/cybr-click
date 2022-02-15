@@ -8,10 +8,10 @@ import PasswordIcon from "../assets/icons/password-icon.svg";
 
 const Login = () => {
   return (
-    <form action="" className="login-form">
-      <p className="sign-in-msg">Sign In</p>
-      <h1 className="welcome">Welcome Back</h1>
-      <p className="sign-in-instructions">
+    <form action="" className="home-form">
+      <p className="form-type">Sign In</p>
+      <h1 className="greeting">Welcome Back</h1>
+      <p className="msg-to-user">
         Sign in with your email and password or continue with social media
       </p>
       <div className="form-control">
@@ -29,7 +29,7 @@ const Login = () => {
         />
         <img src={PasswordIcon} alt="password icon" />
       </div>
-      <div className="extra-action-wrapper">
+      <div className="extra-actions-wrapper">
         <div className="remember-me-wrapper">
           <input type="checkbox" name="" id="remember-me" />
           <label htmlFor="remember-me">Remember me</label>
@@ -37,7 +37,7 @@ const Login = () => {
         <p className="forgot-password">Forgot Password</p>
       </div>
       <Button btnText="Continue" btnClass="btn-action" />
-      <p className="sign-up-instruction">
+      <p className="change-form-type">
         Don't have an account? &nbsp;
         <Link to="/register" className="sign-up-link">
           Sign Up

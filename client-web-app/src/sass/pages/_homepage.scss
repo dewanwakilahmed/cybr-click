@@ -18,6 +18,96 @@
   .home-form-wrapper {
     width: 30%;
     padding: 3.5em 1.5em;
+
+    .home-form {
+      height: 100%;
+      @include flex-col;
+      justify-content: space-between;
+
+      .form-type {
+        margin-bottom: 2em;
+      }
+
+      .greeting {
+        color: $black;
+      }
+
+      .msg-to-user {
+        text-align: center;
+        margin-bottom: 2em;
+      }
+
+      .form-control {
+        width: 100%;
+        display: flex;
+        gap: 0.5em;
+        border: 1px solid $gray-light;
+        padding: 0.5rem;
+        border-radius: 1em;
+        position: relative;
+
+        label {
+          position: absolute;
+          background-color: $white;
+          padding: 0 0.75rem;
+          top: -0.75em;
+          left: 1.5em;
+        }
+
+        input {
+          width: 100%;
+          padding: 0.2rem;
+          border: none;
+
+          &:focus {
+            outline: none;
+          }
+
+          &::placeholder {
+            color: $gray-light;
+          }
+        }
+      }
+
+      .extra-actions-wrapper {
+        width: 100%;
+        @include flex-row;
+        justify-content: space-between;
+
+        .remember-me-wrapper {
+          &:hover {
+            color: $gray;
+          }
+
+          label,
+          input {
+            cursor: pointer;
+          }
+        }
+
+        .forgot-password {
+          text-decoration: underline;
+          cursor: pointer;
+
+          &:hover {
+            color: $gray;
+          }
+        }
+      }
+
+      .change-form-type {
+        margin-top: 2em;
+
+        .sign-up-link {
+          color: $orange;
+          text-decoration: none;
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
   }
 
   .home-content {
