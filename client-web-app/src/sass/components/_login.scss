@@ -2,7 +2,6 @@
 @use "../abstracts/mixins" as *;
 
 .login-form {
-  // background-color: blue;
   height: 100%;
   @include flex-col;
   justify-content: space-between;
@@ -27,12 +26,11 @@
     border: 1px solid $gray-light;
     padding: 0.5rem;
     border-radius: 1.25em;
-    // background-color: black;
     position: relative;
 
     label {
       position: absolute;
-      background-color: white;
+      background-color: $white;
       padding: 0 0.75rem;
       top: -0.75em;
       left: 1.5em;
@@ -80,7 +78,6 @@
   }
 
   .sign-up-instruction {
-    // background-color: blue;
     margin-top: 2.5em;
 
     span {

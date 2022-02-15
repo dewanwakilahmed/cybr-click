@@ -1,5 +1,10 @@
-const Button = (props) => {
-  return <button className="btn">{props.btnText}</button>;
+const Button = ({ btnClass, btnText }) => {
+  let className = "btn";
+  if (btnClass) {
+    className += " " + btnClass;
+  }
+
+  return <button className={className}>{btnText}</button>;
 };
 
 export default Button;

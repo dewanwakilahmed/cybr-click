@@ -1,3 +1,5 @@
+import Button from "../components/Button";
+
 // Icons
 import MailIcon from "../assets/icons/mail-icon.svg";
 import PasswordIcon from "../assets/icons/password-icon.svg";
@@ -32,7 +34,7 @@ const Login = () => {
         </div>
         <p className="forgot-password">Forgot Password</p>
       </div>
-      <button className="btn btn-action">Continue</button>
+      <Button btnText="Continue" btnClass="btn-action" />
       <p className="sign-up-instruction">
         Don't have an account? <span>Sign Up</span>
       </p>
