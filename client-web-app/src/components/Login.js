@@ -26,7 +26,7 @@ const Login = () => {
         <img src={PasswordIcon} alt="password icon" />
       </div>
       <div className="extra-action-wrapper">
-        <div>
+        <div className="remember-me-wrapper">
           <input type="checkbox" name="" id="remember-me" />
           <label htmlFor="remember-me">Remember me</label>
         </div>

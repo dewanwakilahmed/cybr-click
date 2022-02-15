@@ -58,9 +58,24 @@
     @include flex-row;
     justify-content: space-between;
 
+    .remember-me-wrapper {
+      &:hover {
+        color: $gray;
+      }
+
+      label,
+      input {
+        cursor: pointer;
+      }
+    }
+
     .forgot-password {
       text-decoration: underline;
       cursor: pointer;
+
+      &:hover {
+        color: $gray;
+      }
     }
   }
 
