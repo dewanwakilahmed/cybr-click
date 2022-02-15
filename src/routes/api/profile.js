@@ -17,6 +17,7 @@ router.post(
   [
     authMiddleware,
     [
+      check("name", "Name is required!").not().isEmpty(),
       check("dateOfBirth", "Date of Birth is required!").not().isEmpty(),
       check("country", "Country is required!").not().isEmpty(),
     ],
@@ -29,6 +30,7 @@ router.post(
     }
 
     const {
+      name,
       dateOfBirth,
       gender,
       country,
@@ -49,6 +51,7 @@ router.post(
 
     // Build Profile Object
     profileFields.user = req.user.id;
+    if (name) profileFields.name = name;
     if (dateOfBirth) profileFields.dateOfBirth = dateOfBirth;
     if (gender) profileFields.gender = gender;
     if (profession) profileFields.profession = profession;
@@ -76,25 +79,39 @@ router.post(
     if (website) profileFields.social.website = website;
 
     try {
-      let profile = await Profile.findOne({ user: req.user.id });
+      let profileWithInputUserName = await Profile.findOne({ name });
+      let existingProfile = await Profile.findOne({ user: req.user.id });
+
+      // Check if Username is already taken
+      if (profileWithInputUserName && existingProfile) {
+        if (existingProfile.name !== name) {
+          return res.status(400).json({
+            msg: "Name already taken. Please use a different name!",
+          });
+        }
+      } else if (profileWithInputUserName && !existingProfile) {
+        return res.status(400).json({
+          msg: "Name already taken. Please use a different name!",
+        });
+      }
 
       // Update Profile if it already exists
-      if (profile) {
-        profile = await Profile.findOneAndUpdate(
+      if (existingProfile) {
+        existingProfile = await Profile.findOneAndUpdate(
           { user: req.user.id },
           { $set: profileFields },
           { new: true }
         );
 
         console.log("Profile Updated Successfully!");
-        return res.json(profile);
+        return res.json(existingProfile);
       }
 
       // Create Profile if it doesn't already exist
-      profile = new Profile(profileFields);
-      await profile.save();
+      let newProfile = new Profile(profileFields);
+      await newProfile.save();
       console.log("Profile Created Successfully!");
-      res.json(profile);
+      res.json(newProfile);
     } catch (err) {
       console.error(err.message);
       res
