@@ -1,0 +1,36 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+.homepage {
+  display: flex;
+  min-height: 100vh;
+  color: $gray-light;
+  position: relative;
+  // background-color: black;
+
+  .cybr-click-logo {
+    width: 5em;
+    position: absolute;
+    top: 1.5em;
+    right: 1.5em;
+  }
+
+  .home-form-wrapper {
+    width: 30%;
+    padding: 3.5em 1.5em;
+    // background-color: violet;
+  }
+
+  .home-content {
+    width: 70%;
+    background-color: $orange-light;
+    padding: 2.5em;
+    @include flex-col;
+    justify-content: flex-end;
+
+    img {
+      // background-color: violet;
+      width: 50em;
+    }
+  }
+}

@@ -11,7 +11,8 @@
 
 /* components imports */
 @use "./components/buttons";
+@use "./components/login";
 
 /* pages imports */
-@use "./pages/login";
+@use "./pages/homepage";
 @use "./pages/welcome";

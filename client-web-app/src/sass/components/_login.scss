@@ -1,0 +1,80 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+.login-form {
+  // background-color: blue;
+  height: 100%;
+  @include flex-col;
+  justify-content: space-between;
+
+  .sign-in-msg {
+    margin-bottom: 2.5em;
+  }
+
+  .welcome {
+    color: $black;
+  }
+
+  .sign-in-instructions {
+    text-align: center;
+    margin-bottom: 2.5em;
+  }
+
+  .form-control {
+    width: 100%;
+    display: flex;
+    gap: 0.5em;
+    border: 1px solid $gray-light;
+    padding: 0.5rem;
+    border-radius: 1.25em;
+    // background-color: black;
+    position: relative;
+
+    label {
+      position: absolute;
+      background-color: white;
+      padding: 0 0.75rem;
+      top: -0.75em;
+      left: 1.5em;
+    }
+
+    input {
+      width: 100%;
+      padding: 0.2rem;
+      border: none;
+
+      &:focus {
+        outline: none;
+      }
+
+      &::placeholder {
+        color: $gray-light;
+      }
+    }
+  }
+
+  .extra-action-wrapper {
+    width: 100%;
+    @include flex-row;
+    justify-content: space-between;
+
+    .forgot-password {
+      text-decoration: underline;
+      cursor: pointer;
+    }
+  }
+
+  .sign-up-instruction {
+    // background-color: blue;
+    margin-top: 2.5em;
+
+    span {
+      color: $orange;
+
+      &:hover {
+        text-decoration: underline;
+        cursor: pointer;
+      }
+    }
+  }
+}
