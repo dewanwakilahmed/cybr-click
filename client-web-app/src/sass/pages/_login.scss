@@ -1,165 +1,114 @@
 @use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
 
 .login-page {
-  background-color: $gray;
-  color: $white;
-  min-height: 100vh;
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  min-height: 100vh;
+  color: $gray-light;
+  position: relative;
+  // background-color: black;
 
-  .login-header {
-    background-color: $black;
-
-    .login-header-content {
-      // background-color: violet;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-
-      .cybr-click-logo {
-        height: 5em;
-        cursor: pointer;
-        opacity: 0.95;
-
-        &:hover {
-          opacity: 1;
-        }
-      }
-
-      .app-title {
-        letter-spacing: 0.75rem;
-        word-spacing: 0.75rem;
-        text-shadow: 2.5px 2.5px 7.5px $white;
-
-        &:hover {
-          text-shadow: 2.5px 2.5px 5px $white;
-          cursor: pointer;
-        }
-      }
-    }
+  .cybr-click-logo {
+    width: 5em;
+    position: absolute;
+    top: 1.5em;
+    right: 1.5em;
   }
 
-  .login-main {
-    // background-color: orange;
-    // max-width: min-content;
-    // align-self: center;
-    display: flex;
-    flex-direction: column;
+  .login-form-wrapper {
+    width: 30%;
+    padding: 3.5em 1.5em;
+    // background-color: violet;
 
-    .login-main-content {
-      background-color: $black;
-      padding: 2.25em;
-      border-radius: 0.875em;
-      -webkit-box-shadow: 0px 0px 25px 5px $black;
-      box-shadow: 0px 0px 25px 5px $black;
-      // flex-direction: column;
-    }
+    form {
+      // background-color: blue;
+      height: 100%;
+      @include flex-col;
+      justify-content: space-between;
 
-    .welcome-msg {
-      .welcome-title {
-        color: $logo-color;
-        font-weight: 900;
-        margin-bottom: 0.25rem;
+      .sign-in-msg {
+        margin-bottom: 2.5em;
       }
 
-      .welcome-subtitle {
-        font-weight: 700;
+      .welcome {
+        color: $black;
       }
-    }
 
-    .user-instructions {
-      color: $gray-light;
-      margin-top: 1.5rem;
-      margin-bottom: 1rem;
-      font-size: 0.875rem;
-    }
+      .sign-in-instructions {
+        text-align: center;
+        margin-bottom: 2.5em;
+      }
 
-    .login-wrapper {
-      .login {
-        // display: flex;
-        // align-items: center;
-        // justify-content: center;
-        margin-bottom: 1.15em;
+      .form-control {
+        width: 100%;
+        display: flex;
+        gap: 0.5em;
+        border: 1px solid $gray-light;
+        padding: 0.5rem;
+        border-radius: 1.25em;
+        // background-color: black;
+        position: relative;
 
-        .login-form {
-          // background-color: violet;
-          display: flex;
-          flex-direction: column;
-          gap: 1em;
-          align-items: center;
-          justify-content: center;
+        label {
+          position: absolute;
+          background-color: white;
+          padding: 0 0.75rem;
+          top: -0.75em;
+          left: 1.5em;
+        }
 
-          .input-wrapper {
-            background-color: $gray-light;
-            display: flex;
-            gap: 0.35em;
-            align-items: center;
-            justify-content: center;
-            padding: 0.25rem;
-            border-radius: 0.25em;
-            // position: relative;
+        input {
+          width: 100%;
+          padding: 0.2rem;
+          border: none;
 
-            .text-input {
-              background-color: $gray-light;
-              border: none;
-              padding: 0.25rem 0.5rem;
+          &:focus {
+            outline: none;
+          }
 
-              &::placeholder {
-                color: $black;
-              }
-
-              &:focus {
-                outline: none;
-                -webkit-box-shadow: 0px 0px 25px 2.5px $black;
-                box-shadow: 0px 0px 25px 2.5px $black;
-              }
-            }
-
-            .input-icon {
-              color: $black;
-            }
+          &::placeholder {
+            color: $gray-light;
           }
         }
-
-        // .login-external {
-        //   display: flex;
-        //   flex-direction: column;
-        //   gap: 1em;
-        //   align-items: center;
-        //   justify-content: center;
-        // }
       }
 
-      .forgot-password {
-        color: $gray-light;
-        font-size: 0.875rem;
+      .extra-action-wrapper {
+        width: 100%;
+        @include flex-row;
+        justify-content: space-between;
 
-        &:hover {
-          cursor: pointer;
+        .forgot-password {
           text-decoration: underline;
+          cursor: pointer;
+        }
+      }
+
+      .sign-up-instruction {
+        // background-color: blue;
+        margin-top: 2.5em;
+
+        span {
+          color: $orange;
+
+          &:hover {
+            text-decoration: underline;
+            cursor: pointer;
+          }
         }
       }
     }
   }
 
-  .login-footer {
-    background-color: $black;
-    color: $gray-light;
-    font-size: 0.875rem;
+  .login-content {
+    width: 70%;
+    background-color: $orange-light;
+    padding: 2.5em;
+    @include flex-col;
+    justify-content: flex-end;
 
-    .login-footer-content {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-
-      .privacy-policy {
-        cursor: pointer;
-
-        &:hover {
-          text-decoration: underline;
-        }
-      }
+    img {
+      // background-color: violet;
+      width: 50em;
     }
   }
 }

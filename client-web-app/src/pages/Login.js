@@ -1,88 +1,64 @@
 // Icons
-import { FcGoogle } from "react-icons/fc";
-import { HiOutlineMail } from "react-icons/hi";
-import { BsEyeSlashFill } from "react-icons/bs";
-import { BiLogIn } from "react-icons/bi";
+import MailIcon from "../assets/icons/mail-icon.svg";
+import PasswordIcon from "../assets/icons/password-icon.svg";
 
 // Logo
 import CybrClickLogo from "../assets/logos/cybr-click-logo.svg";
 
+// Images
+import LoginImage from "../assets/images/login-image.svg";
+
 const LoginPage = () => {
   return (
     <div className="login-page">
-      <header className="login-header">
-        <div className="login-header-content container">
-          <img
-            src={CybrClickLogo}
-            alt="Cybr Click Logo"
-            className="cybr-click-logo"
-          />
-          <h1 className="app-title">CYBR CLICK</h1>
-          <button className="btn btn-action login-page-btn">Sign Up</button>
-        </div>
-      </header>
-      <main className="login-main">
-        <div className="login-main-content container">
-          <div className="welcome-msg">
-            <h2 className="welcome-title">
-              Now Everyone Can Make A Living With Digital
-            </h2>
-            <h3 className="welcome-subtitle">
-              The platform for you to be creative. Never miss the opportunity!
-            </h3>
+      <img
+        src={CybrClickLogo}
+        alt="cybr click logo"
+        className="cybr-click-logo"
+      />
+      <div className="login-form-wrapper">
+        <form action="">
+          <p className="sign-in-msg">Sign In</p>
+          <h1 className="welcome">Welcome Back</h1>
+          <p className="sign-in-instructions">
+            Sign in with your email and password or continue with social media
+          </p>
+          <div className="form-control">
+            <label htmlFor="email">Email</label>
+            <input
+              type="text"
+              placeholder="Enter your email"
+              name=""
+              id="email"
+            />
+            <img src={MailIcon} alt="mail icon" />
           </div>
-          <div className="user-instructions">
-            <p>Already a member? Login below.</p>
-            <p>Not a member yet? Sign up now. It completely free!</p>
+          <div className="form-control">
+            <label htmlFor="password">Password</label>
+            <input
+              type="password"
+              placeholder="Enter your password"
+              name=""
+              id="password"
+            />
+            <img src={PasswordIcon} alt="password icon" />
           </div>
-          <div className="login-wrapper">
-            <div className="login">
-              <form action="" className="login-form">
-                <div className="input-wrapper">
-                  <input
-                    type="text"
-                    placeholder="Email"
-                    className="text-input"
-                  />
-                  <HiOutlineMail size="1.25rem" className="input-icon" />
-                </div>
-                <div className="input-wrapper">
-                  <input
-                    type="password"
-                    placeholder="Password"
-                    className="text-input"
-                  />
-                  <BsEyeSlashFill size="1.25rem" className="input-icon" />
-                </div>
-                <div className="login-action">
-                  <button className="btn btn-action login-page-btn">
-                    <span>Login</span>
-                    <BiLogIn size="1.25rem" />
-                  </button>
-                </div>
-              </form>
-              {/* <div className="divider">
-                <p>/</p>
-              </div> */}
-              {/* <div className="login-external">
-                <button className="btn btn-action login-page-btn">
-                  <FcGoogle size="1.25rem" />
-                  <span>Sign in with Google</span>
-                </button>
-              </div> */}
+          <div className="extra-action-wrapper">
+            <div>
+              <input type="checkbox" name="" id="remember-me" />
+              <label htmlFor="remember-me">Remember me</label>
             </div>
-            <div className="forgot-password">
-              <p>Forgot Password?</p>
-            </div>
+            <p className="forgot-password">Forgot Password</p>
           </div>
-        </div>
-      </main>
-      <footer className="login-footer">
-        <div className="login-footer-content container">
-          <p className="privacy-policy">Privacy Policy</p>
-          <p className="copyright">Copyright © 2022 - Cybrclick.com</p>
-        </div>
-      </footer>
+          <button className="btn btn-action">Continue</button>
+          <p className="sign-up-instruction">
+            Don't have an account? <span>Sign Up</span>
+          </p>
+        </form>
+      </div>
+      <div className="login-content">
+        <img src={LoginImage} alt="people working on digital products" />
+      </div>
     </div>
   );
 };
