@@ -1,15 +1,16 @@
+import { Routes, Route } from "react-router-dom";
+
+import Login from "./pages/Login";
+
 import "./sass/main.scss";
 
 function App() {
   return (
-    <div className="App">
-      <h1>Cybr Click</h1>
-      <ul>
-        <li>bread</li>
-        <li>eggs</li>
-        <li>milk</li>
-      </ul>
-    </div>
+    <>
+      <Routes>
+        <Route path="/" element={<Login />} />
+      </Routes>
+    </>
   );
 }
 

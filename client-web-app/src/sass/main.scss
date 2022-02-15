@@ -7,9 +7,11 @@
 @use "./base/typography";
 
 /* layout imports */
+@use "./layout/layout";
 
 /* components imports */
 @use "./components/buttons";
 
 /* pages imports */
+@use "./pages/login";
 @use "./pages/welcome";
