@@ -1,4 +1,4 @@
-import Login from "../components/Login";
+import { Outlet } from "react-router-dom";
 
 // Logo
 import CybrClickLogo from "../assets/logos/cybr-click-logo.svg";
@@ -15,7 +15,7 @@ const Homepage = () => {
         className="cybr-click-logo"
       />
       <div className="home-form-wrapper">
-        <Login />
+        <Outlet />
       </div>
       <div className="home-content">
         <img src={HomepageImage} alt="people working on digital products" />

@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 import Button from "../components/Button";
 
 // Icons
@@ -36,7 +38,10 @@ const Login = () => {
       </div>
       <Button btnText="Continue" btnClass="btn-action" />
       <p className="sign-up-instruction">
-        Don't have an account? <span>Sign Up</span>
+        Don't have an account? &nbsp;
+        <Link to="/register" className="sign-up-link">
+          Sign Up
+        </Link>
       </p>
     </form>
   );
