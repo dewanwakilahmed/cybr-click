@@ -22,7 +22,6 @@ const router = express.Router();
 router.post(
   "/register",
   [
-    check("name", "Name is required!").not().isEmpty(),
     check("email", "Valid Email is required!").isEmail(),
     check(
       "password",
@@ -36,7 +35,7 @@ router.post(
       return res.status(400).json({ errors: errors.array() });
     }
 
-    const { name, email, password } = req.body;
+    const { email, password } = req.body;
 
     try {
       // Check if User already exists
@@ -55,7 +54,7 @@ router.post(
       });
 
       // Create New User Instance
-      user = new User({ name, email, password, avatar });
+      user = new User({ email, password, avatar });
 
       // Encrypt Password
       const salt = await bcrypt.genSalt(10);
