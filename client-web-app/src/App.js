@@ -1,9 +1,11 @@
+import { useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 
 // Redux
 import { Provider } from "react-redux";
 import store from "./redux/store";
 import setAuthToken from "./redux/utils/setAuthToken";
+import { loadUser } from "./redux";
 
 // Pages
 import Homepage from "./pages/Homepage";
@@ -22,6 +24,10 @@ if (token) {
 }
 
 const App = () => {
+  useEffect(() => {
+    store.dispatch(loadUser());
+  }, []);
+
   return (
     <Provider store={store}>
       <Routes>
