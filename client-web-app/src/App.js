@@ -3,6 +3,7 @@ import { Routes, Route } from "react-router-dom";
 // Redux
 import { Provider } from "react-redux";
 import store from "./redux/store";
+import setAuthToken from "./redux/utils/setAuthToken";
 
 // Pages
 import Homepage from "./pages/Homepage";
@@ -14,7 +15,13 @@ import Register from "./components/Register";
 // Main SASS
 import "./sass/main.scss";
 
-function App() {
+// Set Auth Token
+const token = localStorage.token;
+if (token) {
+  setAuthToken(token);
+}
+
+const App = () => {
   return (
     <Provider store={store}>
       <Routes>
@@ -25,6 +32,6 @@ function App() {
       </Routes>
     </Provider>
   );
-}
+};
 
 export default App;
