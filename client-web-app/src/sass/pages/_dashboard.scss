@@ -76,6 +76,10 @@
           border-radius: 50%;
           overflow: hidden;
           width: 4em;
+
+          &:hover {
+            border-color: $orange-hover;
+          }
         }
       }
     }

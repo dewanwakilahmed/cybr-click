@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Outlet, NavLink } from "react-router-dom";
+import { Outlet, NavLink, Link } from "react-router-dom";
 
 // Logo
 import CybrClickLogo from "../assets/logos/cybr-click-logo.svg";
@@ -28,11 +28,13 @@ const DashboardPage = () => {
     <div className="dashboard-page">
       <header className="dashboard-header">
         <div className="cybr-click-logo-container">
-          <img
-            src={CybrClickLogo}
-            alt="cybr click logo"
-            className="cybr-click-logo"
-          />
+          <Link to="/dashboard">
+            <img
+              src={CybrClickLogo}
+              alt="cybr click logo"
+              className="cybr-click-logo"
+            />
+          </Link>
         </div>
         <div className="tab-info-and-utilities">
           <h1 className="current-tab-title">{tabTitle}</h1>
@@ -42,7 +44,9 @@ const DashboardPage = () => {
           </div>
           <div className="user-utilities">
             <IoMdNotificationsOutline className="notification-icon" />
-            <img src={UserImage} alt="User Profile" className="user-image" />
+            <Link to="my-profile">
+              <img src={UserImage} alt="User Profile" className="user-image" />
+            </Link>
           </div>
         </div>
       </header>
