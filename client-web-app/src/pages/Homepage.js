@@ -6,7 +6,7 @@ import CybrClickLogo from "../assets/logos/cybr-click-logo.svg";
 // Images
 import HomepageImage from "../assets/images/homepage-image.svg";
 
-const Homepage = () => {
+const HomePage = () => {
   return (
     <div className="homepage">
       <img
@@ -24,4 +24,4 @@ const Homepage = () => {
   );
 };
 
-export default Homepage;
+export default HomePage;

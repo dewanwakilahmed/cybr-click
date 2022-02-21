@@ -1,0 +1,202 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+.dashboard-page {
+  // background-color: yellow;
+  min-height: 100vh;
+  color: $gray;
+  display: flex;
+  flex-direction: column;
+
+  .dashboard-header {
+    // background-color: maroon;
+    display: flex;
+
+    .cybr-click-logo-container {
+      flex-basis: 15%;
+      border-right: $dashboard-border;
+      padding: $p-sm;
+      @include flex-row;
+
+      .cybr-click-logo {
+        width: 5em;
+        cursor: pointer;
+      }
+    }
+
+    .tab-info-and-utilities {
+      // background-color: violet;
+      flex-basis: 85%;
+      padding: $p-sm;
+      display: flex;
+      align-items: center;
+
+      .current-tab-title {
+        flex-basis: 33.33%;
+        color: $black;
+      }
+
+      .search-bar {
+        // background-color: white;
+        flex-basis: 33.33%;
+        border: 2.5px solid $gray-light;
+        border-radius: 1.15em;
+        padding: 0.15em 0.6em;
+        display: flex;
+        gap: 0.25rem;
+        align-items: center;
+        // width: min-content;
+
+        .search-input {
+          // background-color: orange;
+          border: none;
+          padding: 0.25rem;
+          width: 15rem;
+
+          &:focus {
+            outline: none;
+          }
+        }
+      }
+
+      .user-utilities {
+        flex-basis: 33.33%;
+        // background-color: maroon;
+        display: flex;
+        gap: 1em;
+        justify-content: flex-end;
+        align-items: center;
+
+        .notification-icon {
+          font-size: 1.5rem;
+        }
+
+        .user-image {
+          border: 2.5px solid $orange;
+          border-radius: 50%;
+          overflow: hidden;
+          width: 4em;
+        }
+      }
+    }
+  }
+
+  .dashboard-main {
+    // background-color: violet;
+    border-top: $dashboard-border;
+    border-bottom: $dashboard-border;
+    flex-grow: 1;
+    display: flex;
+
+    .dashboard-nav {
+      border-right: $dashboard-border;
+      flex-basis: 15%;
+      // background-color: green;
+      padding: 1.25em;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      .nav {
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+
+        .nav-tab {
+          text-decoration: none;
+          color: inherit;
+          border-radius: 0.7em;
+          padding: 0.5em 1em;
+          display: flex;
+          gap: 0.5rem;
+          align-items: center;
+          cursor: pointer;
+          // background-color: blue;
+
+          &:hover {
+            background-color: $gray-light;
+            color: $black;
+
+            .nav-tab-icon {
+              color: $black;
+            }
+          }
+        }
+
+        .active {
+          background-color: $gray;
+          color: $white;
+
+          .nav-tab-icon {
+            color: $white;
+          }
+        }
+      }
+
+      .help {
+        width: min-content;
+        padding: 0.5em 1em;
+        display: flex;
+        gap: 0.5rem;
+        align-items: center;
+        cursor: pointer;
+        // background-color: $black;
+
+        &:hover {
+          color: $black;
+
+          .help-icon {
+            color: $black;
+          }
+        }
+      }
+    }
+
+    .dashboard-content {
+      flex-basis: 85%;
+      // background-color: blue;
+      padding: 1.25em;
+    }
+  }
+
+  .dashboard-footer {
+    // background-color: indigo;
+    padding: $p-sm;
+    color: $gray-light;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .privacy-policy {
+      cursor: pointer;
+
+      &:hover {
+        color: $black;
+      }
+    }
+
+    .platform-info {
+      text-align: center;
+
+      .platform-moto {
+        &:hover {
+          color: $black;
+        }
+      }
+
+      .copyright {
+        font-size: 0.875rem;
+
+        &:hover {
+          color: $black;
+        }
+      }
+    }
+
+    .platform-social-links {
+      // background-color: yellow;
+      display: flex;
+      gap: 0.875rem;
+    }
+  }
+}
