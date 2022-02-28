@@ -41,9 +41,11 @@ router.post(
       // Check if User already exists
       let user = await User.findOne({ email });
       if (user) {
-        return res
-          .status(400)
-          .json({ msg: "Email already taken. Please use a different email!" });
+        return res.status(400).json({
+          errors: [
+            { msg: "Email already taken. Please use a different email!" },
+          ],
+        });
       }
 
       // Fetch User's Gravatar from Email
