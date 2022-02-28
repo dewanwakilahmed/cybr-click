@@ -93,7 +93,7 @@ const DashboardPage = () => {
               <FaUserCircle className="nav-tab-icon" />
               <span className="nav-tab-title">My Profile</span>
             </NavLink>
-            <NavLink to="logout" className="nav-tab">
+            <NavLink to="/" className="nav-tab">
               <RiLogoutBoxRFill className="nav-tab-icon" />
               <span className="nav-tab-title">Sign Out</span>
             </NavLink>

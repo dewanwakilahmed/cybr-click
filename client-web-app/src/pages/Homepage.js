@@ -1,4 +1,4 @@
-import { Outlet } from "react-router-dom";
+import { Outlet, Link } from "react-router-dom";
 
 // Logo
 import CybrClickLogo from "../assets/logos/cybr-click-logo.svg";
@@ -9,11 +9,13 @@ import HomepageImage from "../assets/images/homepage-image.svg";
 const HomePage = () => {
   return (
     <div className="homepage">
-      <img
-        src={CybrClickLogo}
-        alt="cybr click logo"
-        className="cybr-click-logo"
-      />
+      <Link to="/">
+        <img
+          src={CybrClickLogo}
+          alt="cybr click logo"
+          className="cybr-click-logo"
+        />
+      </Link>
       <div className="home-form-wrapper">
         <Outlet />
       </div>
