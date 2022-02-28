@@ -8,6 +8,9 @@ import store from "./redux/store";
 import setAuthToken from "./redux/utils/setAuthToken";
 import { loadUser } from "./redux";
 
+// Private Route
+import PrivateRoute from "./routing/PrivateRoute";
+
 // Pages
 import HomePage from "./pages/HomePage";
 import DashboardPage from "./pages/DashboardPage";
@@ -46,7 +49,14 @@ const App = () => {
             <Route path="login" element={<Login />} />
             <Route path="register" element={<Register />} />
           </Route>
-          <Route path="dashboard" element={<DashboardPage />}>
+          <Route
+            path="dashboard"
+            element={
+              <PrivateRoute>
+                <DashboardPage />
+              </PrivateRoute>
+            }
+          >
             <Route index element={<HomeTab />} />
             <Route path="home" element={<HomeTab />} />
             <Route path="blogs" element={<BlogsTab />} />
