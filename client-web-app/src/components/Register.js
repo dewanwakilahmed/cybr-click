@@ -20,13 +20,13 @@ const Register = ({ isAuthenticated, setAlert, registerUser }) => {
 
   const { email, password, password2 } = formData;
 
-  const onChange = (e) =>
+  const changeHandler = (e) =>
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
     });
 
-  const onSubmit = async (e) => {
+  const submitHandler = async (e) => {
     e.preventDefault();
 
     if (password === password2) {
@@ -41,7 +41,7 @@ const Register = ({ isAuthenticated, setAlert, registerUser }) => {
   }
 
   return (
-    <form className="home-form" onSubmit={(e) => onSubmit(e)}>
+    <form className="home-form" onSubmit={(e) => submitHandler(e)}>
       <p className="form-type">Sign Up</p>
       <h1 className="greeting">Welcome</h1>
       <p className="msg-to-user">
@@ -55,7 +55,7 @@ const Register = ({ isAuthenticated, setAlert, registerUser }) => {
           placeholder="Enter your email"
           name="email"
           value={email}
-          onChange={(e) => onChange(e)}
+          onChange={(e) => changeHandler(e)}
           id="email"
           required
         />
@@ -68,7 +68,7 @@ const Register = ({ isAuthenticated, setAlert, registerUser }) => {
           placeholder="Enter your password"
           name="password"
           value={password}
-          onChange={(e) => onChange(e)}
+          onChange={(e) => changeHandler(e)}
           minLength="8"
           required
           id="password"
@@ -82,7 +82,7 @@ const Register = ({ isAuthenticated, setAlert, registerUser }) => {
           placeholder="Enter your password again"
           name="password2"
           value={password2}
-          onChange={(e) => onChange(e)}
+          onChange={(e) => changeHandler(e)}
           minLength="8"
           required
           id="password2"

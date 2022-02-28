@@ -85,6 +85,24 @@ export const loginUser = (email, password) => {
     const body = JSON.stringify({ email, password });
 
     try {
-    } catch (err) {}
+      const res = await axios.post("/api/auth", body, config);
+
+      dispatch({
+        type: LOGIN_SUCCESS,
+        payload: res.data,
+      });
+
+      dispatch(loadUser());
+    } catch (err) {
+      const errors = err.response.data.errors;
+
+      if (errors) {
+        errors.forEach((error) => dispatch(setAlert(error.msg, "error")));
+      }
+
+      dispatch({
+        type: LOGIN_FAIL,
+      });
+    }
   };
 };

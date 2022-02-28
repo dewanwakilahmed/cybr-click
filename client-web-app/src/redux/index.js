@@ -1,2 +1,2 @@
 export { setAlert } from "./actions/alertActions";
-export { registerUser, loadUser } from "./actions/authActions";
+export { registerUser, loadUser, loginUser } from "./actions/authActions";
