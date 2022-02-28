@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { Link, Navigate } from "react-router-dom";
 import PropTypes from "prop-types";
+import { Link, Navigate } from "react-router-dom";
 import { connect } from "react-redux";
 
 import { setAlert, registerUser } from "../redux";
@@ -13,7 +13,6 @@ import PasswordIcon from "../assets/icons/password-icon.svg";
 
 const Register = ({ isAuthenticated, setAlert, registerUser }) => {
   const [formData, setFormData] = useState({
-    name: "",
     email: "",
     password: "",
     password2: "",
@@ -31,7 +30,7 @@ const Register = ({ isAuthenticated, setAlert, registerUser }) => {
     e.preventDefault();
 
     if (password === password2) {
-      registerUser({ email, password });
+      registerUser(email, password);
     } else {
       setAlert("Passwords do not match!", "error", 3000);
     }

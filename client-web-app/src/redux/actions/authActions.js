@@ -8,6 +8,8 @@ import {
   REGISTER_FAIL,
   USER_LOADED,
   AUTH_ERROR,
+  LOGIN_SUCCESS,
+  LOGIN_FAIL,
 } from "../types/allTypes";
 
 // Utils
@@ -38,7 +40,7 @@ export const loadUser = () => {
 };
 
 // Register User
-export const registerUser = ({ email, password }) => {
+export const registerUser = (email, password) => {
   return async (dispatch) => {
     const config = {
       headers: {
