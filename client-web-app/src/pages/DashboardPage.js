@@ -1,5 +1,9 @@
 import { useState } from "react";
+import PropTypes from "prop-types";
 import { Outlet, NavLink, Link } from "react-router-dom";
+import { connect } from "react-redux";
+
+import { logoutUser } from "../redux";
 
 // Logo
 import CybrClickLogo from "../assets/logos/cybr-click-logo.svg";
@@ -21,7 +25,7 @@ import {
 // Images
 import UserImage from "../assets/images/user-image-sample.jpg";
 
-const DashboardPage = () => {
+const DashboardPage = ({ logoutUser }) => {
   const [tabTitle, setTabTitle] = useState("Home");
 
   return (
@@ -93,7 +97,7 @@ const DashboardPage = () => {
               <FaUserCircle className="nav-tab-icon" />
               <span className="nav-tab-title">My Profile</span>
             </NavLink>
-            <NavLink to="/" className="nav-tab">
+            <NavLink to="/" className="nav-tab" onClick={logoutUser}>
               <RiLogoutBoxRFill className="nav-tab-icon" />
               <span className="nav-tab-title">Sign Out</span>
             </NavLink>
@@ -130,4 +134,8 @@ const DashboardPage = () => {
   );
 };
 
-export default DashboardPage;
+DashboardPage.propTypes = {
+  logoutUser: PropTypes.func.isRequired,
+};
+
+export default connect(null, { logoutUser })(DashboardPage);

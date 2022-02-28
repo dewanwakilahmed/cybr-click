@@ -10,6 +10,7 @@ import {
   AUTH_ERROR,
   LOGIN_SUCCESS,
   LOGIN_FAIL,
+  LOGOUT,
 } from "../types/allTypes";
 
 // Utils
@@ -104,5 +105,14 @@ export const loginUser = (email, password) => {
         type: LOGIN_FAIL,
       });
     }
+  };
+};
+
+// Logout / Clear Profile
+export const logoutUser = () => {
+  return (dispatch) => {
+    dispatch({
+      type: LOGOUT,
+    });
   };
 };
