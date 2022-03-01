@@ -3,6 +3,8 @@ import {
   REGISTER_FAIL,
   USER_LOADED,
   AUTH_ERROR,
+  PROFILE_LOADED,
+  NO_PROFILE,
   LOGIN_SUCCESS,
   LOGIN_FAIL,
   LOGOUT,
@@ -10,9 +12,10 @@ import {
 
 const initialState = {
   token: localStorage.getItem("token"),
-  isAuthenticated: null,
+  isAuthenticated: false,
   loading: true,
-  user: null,
+  user: undefined,
+  profile: undefined,
 };
 
 const authReducer = (state = initialState, action) => {
@@ -25,6 +28,18 @@ const authReducer = (state = initialState, action) => {
         user: payload,
         isAuthenticated: true,
         loading: false,
+      };
+
+    case PROFILE_LOADED:
+      return {
+        ...state,
+        profile: payload,
+      };
+
+    case NO_PROFILE:
+      return {
+        ...state,
+        profile: null,
       };
 
     case REGISTER_SUCCESS:
@@ -47,6 +62,8 @@ const authReducer = (state = initialState, action) => {
         token: null,
         isAuthenticated: false,
         loading: false,
+        user: undefined,
+        profile: undefined,
       };
 
     default:

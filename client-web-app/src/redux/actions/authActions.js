@@ -8,6 +8,8 @@ import {
   REGISTER_FAIL,
   USER_LOADED,
   AUTH_ERROR,
+  PROFILE_LOADED,
+  NO_PROFILE,
   LOGIN_SUCCESS,
   LOGIN_FAIL,
   LOGOUT,
@@ -32,10 +34,35 @@ export const loadUser = () => {
         type: USER_LOADED,
         payload: res.data,
       });
+
+      dispatch(loadProfile());
     } catch (err) {
       dispatch({
         type: AUTH_ERROR,
       });
+    }
+  };
+};
+
+// load User Profile
+export const loadProfile = () => {
+  return async (dispatch) => {
+    try {
+      const res = await axios.get("/api/profile/me");
+
+      dispatch({
+        type: PROFILE_LOADED,
+        payload: res.data,
+      });
+    } catch (err) {
+      const error = err.response.data.msg;
+      console.log(error);
+
+      if (err.response.status === 400) {
+        dispatch({
+          type: NO_PROFILE,
+        });
+      }
     }
   };
 };
