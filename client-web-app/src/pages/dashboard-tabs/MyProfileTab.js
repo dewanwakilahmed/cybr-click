@@ -1,5 +1,7 @@
+import { Outlet } from "react-router-dom";
+
 const MyProfileTab = () => {
-  return <div>MyProfileTab</div>;
+  return <Outlet />;
 };
 
 export default MyProfileTab;

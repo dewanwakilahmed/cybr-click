@@ -15,3 +15,6 @@
 /* pages imports */
 @use "./pages/homepage";
 @use "./pages/dashboard";
+
+/* dashboard tab imports */
+@use "./pages/dashboardTabs/myProfile";

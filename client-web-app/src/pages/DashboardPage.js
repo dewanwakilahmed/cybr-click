@@ -114,7 +114,7 @@ const DashboardPage = ({ logoutUser }) => {
       <footer className="dashboard-footer">
         <p className="privacy-policy">Privacy Policy</p>
         <div className="platform-info">
-          <h3 className="platform-moto">Platform from creator to creator</h3>
+          {/* <h4 className="platform-moto">Platform from creator to creator</h4> */}
           <p className="copyright">Copyright © 2022 - Cybrclick.com</p>
         </div>
         <div className="platform-social-links">
