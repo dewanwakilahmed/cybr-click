@@ -57,6 +57,7 @@ router.post(
     if (profession) profileFields.profession = profession;
     if (hobbiesAndInterests) {
       profileFields.hobbiesAndInterests = hobbiesAndInterests
+        .toString()
         .split(",")
         .map((hobbyAndInterest) => hobbyAndInterest.trim());
     }
@@ -86,12 +87,20 @@ router.post(
       if (profileWithInputUserName && existingProfile) {
         if (existingProfile.name !== name) {
           return res.status(400).json({
-            msg: "Name already taken. Please use a different name!",
+            errors: [
+              {
+                msg: "Name already taken. Please use a different name!",
+              },
+            ],
           });
         }
       } else if (profileWithInputUserName && !existingProfile) {
         return res.status(400).json({
-          msg: "Name already taken. Please use a different name!",
+          errors: [
+            {
+              msg: "Name already taken. Please use a different name!",
+            },
+          ],
         });
       }
 
@@ -104,19 +113,23 @@ router.post(
         );
 
         console.log("Profile Updated Successfully!");
-        return res.json(existingProfile);
+        return res.json({ msg: "Profile Updated!" });
       }
 
       // Create Profile if it doesn't already exist
       let newProfile = new Profile(profileFields);
       await newProfile.save();
       console.log("Profile Created Successfully!");
-      res.json(newProfile);
+      res.json({ msg: "Profile Created!" });
     } catch (err) {
       console.error(err.message);
-      res
-        .status(500)
-        .json({ msg: "Create/Update Profile Unsuccessful. Server Error!" });
+      res.status(500).json({
+        errors: [
+          {
+            msg: "Create/Update Profile Unsuccessful. Server Error!",
+          },
+        ],
+      });
     }
   }
 );
