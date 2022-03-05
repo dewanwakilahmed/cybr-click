@@ -1,0 +1,136 @@
+@use "../abstracts/variables" as *;
+
+.my-profile {
+  // background-color: lightblue;
+  color: $txt-dark;
+
+  .my-profile-header {
+    display: flex;
+
+    .user-summary {
+      // background-color: violet;
+      flex-basis: 30%;
+      padding: 1em;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      align-items: center;
+      justify-content: center;
+      border-right: 1px solid $gray-light;
+
+      .user-profile-picture {
+        width: 10em;
+        border-radius: 50%;
+      }
+
+      .user-name {
+        font-weight: 900;
+      }
+
+      .profile-summary {
+        // background-color: lightblue;
+        display: flex;
+        gap: 0.5rem;
+
+        .summary-item {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+
+          .summary-item-title {
+            font-size: 0.85rem;
+            color: $gray;
+          }
+
+          .summary-item-number {
+            font-size: 1.25rem;
+            font-weight: 900;
+          }
+        }
+      }
+    }
+
+    .about-me-container {
+      flex-basis: 70%;
+      margin: 1em;
+      padding: 1em;
+      border-radius: 0.5em;
+      background: linear-gradient(
+        0deg,
+        rgba(255, 192, 203, 0.5) 0%,
+        rgba(255, 192, 203, 0.75) 50%,
+        pink 100%
+      );
+      display: flex;
+      align-items: center;
+      position: relative;
+
+      .btn-update-profile {
+        position: absolute;
+        bottom: 0.75em;
+        right: 0.75em;
+        text-decoration: none;
+        width: min-content;
+        white-space: nowrap;
+      }
+
+      .about-me-title {
+        flex-basis: 20%;
+        // background-color: lightblue;
+        color: $gray;
+      }
+
+      .profile-details {
+        flex-basis: 80%;
+        // background-color: yellow;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        justify-content: center;
+
+        .profile-details-row {
+          display: flex;
+          justify-content: space-between;
+
+          .profile-details-col {
+            border-spacing: 0.75rem 0;
+
+            .profile-items {
+              .profile-item-title {
+                color: $gray;
+                font-size: 0.875rem;
+              }
+
+              .profile-item-value {
+                font-weight: 700;
+              }
+            }
+          }
+        }
+
+        .hobbies-interests {
+          // background-color: yellow;
+          display: flex;
+          flex-wrap: wrap;
+          gap: 0.75rem;
+          justify-content: center;
+
+          .tag {
+            background-color: $black;
+            color: $white;
+            padding: 0.25rem 0.5rem;
+            border-radius: 0.25rem;
+          }
+        }
+
+        .social-links {
+          display: flex;
+          gap: 1rem;
+          justify-content: center;
+        }
+      }
+    }
+  }
+}

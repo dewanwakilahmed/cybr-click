@@ -11,10 +11,11 @@
 
 /* components imports */
 @use "./components/buttons";
+@use "./components/myProfile";
 
 /* pages imports */
 @use "./pages/homepage";
 @use "./pages/dashboard";
 
 /* dashboard tab imports */
-@use "./pages/dashboardTabs/myProfile";
+@use "./pages/dashboardTabs/myProfileTab";

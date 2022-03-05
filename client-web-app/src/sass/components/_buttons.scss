@@ -20,3 +20,17 @@
     box-shadow: 0px 0px 10px 0px $orange;
   }
 }
+
+.btn-follow {
+  background-color: $black;
+  color: $white;
+  padding: 0.5rem 2rem;
+  -webkit-box-shadow: 0px 0px 5px 0px $black;
+  box-shadow: 0px 0px 5px 0px $black;
+
+  &:hover {
+    background-color: $black-hover;
+    -webkit-box-shadow: 0px 0px 10px 0px $black;
+    box-shadow: 0px 0px 10px 0px $black;
+  }
+}
