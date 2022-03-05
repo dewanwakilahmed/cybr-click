@@ -253,9 +253,11 @@ const CreateOrUpdateProfile = ({ profile, createOrUpdateProfile }) => {
       </div>
 
       <div className="form-row action-row">
-        <Link to="/dashboard/my-profile" className="btn btn-black">
-          Go Back
-        </Link>
+        {profileExists && (
+          <Link to="/dashboard/my-profile" className="btn btn-black">
+            Go Back
+          </Link>
+        )}
         <input
           type="submit"
           value={profileExists ? "Update Profile" : "Create Profile"}

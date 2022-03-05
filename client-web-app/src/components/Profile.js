@@ -17,6 +17,39 @@ const Profile = ({ profile }) => {
     return <Navigate to="create" />;
   }
 
+  const {
+    name,
+    dateOfBirth,
+    gender,
+    location,
+    profession,
+    hobbiesAndInterests,
+    social,
+  } = profile;
+
+  const dob = dateOfBirth.split("T")[0];
+
+  const { country, stateOrProvince, city } = location;
+
+  const {
+    facebook,
+    instagram,
+    twitter,
+    youtube,
+    linkedin,
+    pinterest,
+    website,
+  } = social;
+
+  const hobbiesAndInterestsToTags =
+    hobbiesAndInterests !== null &&
+    hobbiesAndInterests.length > 0 &&
+    hobbiesAndInterests.map((item) => (
+      <p key={item} className="tag">
+        {item}
+      </p>
+    ));
+
   return (
     <div className="profile">
       <div className="profile-header">
@@ -26,7 +59,7 @@ const Profile = ({ profile }) => {
             alt="user profile"
             className="user-profile-picture"
           />
-          <h2 className="user-name">Dewan Wakil Ahmed</h2>
+          <h2 className="user-name">{name}</h2>
           <button className="btn btn-black">Follow</button>
           <div className="profile-summary">
             <div className="summary-item">
@@ -51,65 +84,61 @@ const Profile = ({ profile }) => {
           <div className="profile-details general-info">
             <div className="profile-details-row first-row">
               <table className="profile-details-col">
-                <tr className="profile-items">
-                  <td className="profile-item-title">Gender</td>
-                  <td className="profile-item-value">Male</td>
-                </tr>
-                <tr className="profile-items">
-                  <td className="profile-item-title">Age</td>
-                  <td className="profile-item-value">24 yrs</td>
-                </tr>
-                <tr className="profile-items">
-                  <td className="profile-item-title">Profession</td>
-                  <td className="profile-item-value">Full Stack Developer</td>
-                </tr>
+                <tbody>
+                  <tr className="profile-items">
+                    <td className="profile-item-title">Gender</td>
+                    <td className="profile-item-value">{gender}</td>
+                  </tr>
+                  <tr className="profile-items">
+                    <td className="profile-item-title">Date Of Birth</td>
+                    <td className="profile-item-value">{dob}</td>
+                  </tr>
+                  <tr className="profile-items">
+                    <td className="profile-item-title">Profession</td>
+                    <td className="profile-item-value">{profession}</td>
+                  </tr>
+                </tbody>
               </table>
               <table className="profile-details-col">
-                <tr className="profile-items">
-                  <td className="profile-item-title">City</td>
-                  <td className="profile-item-value">Dhaka</td>
-                </tr>
-                <tr className="profile-items">
-                  <td className="profile-item-title">State/Province</td>
-                  <td className="profile-item-value">Bangladesh</td>
-                </tr>
-                <tr className="profile-items">
-                  <td className="profile-item-title">Country</td>
-                  <td className="profile-item-value">Bangladesh</td>
-                </tr>
+                <tbody>
+                  <tr className="profile-items">
+                    <td className="profile-item-title">City</td>
+                    <td className="profile-item-value">{city}</td>
+                  </tr>
+                  <tr className="profile-items">
+                    <td className="profile-item-title">State/Province</td>
+                    <td className="profile-item-value">{stateOrProvince}</td>
+                  </tr>
+                  <tr className="profile-items">
+                    <td className="profile-item-title">Country</td>
+                    <td className="profile-item-value">{country}</td>
+                  </tr>
+                </tbody>
               </table>
             </div>
             <div className="profile-details-row hobbies-interests">
-              <p className="tag">Listening to Music</p>
-              <p className="tag">Walking</p>
-              <p className="tag">Reading</p>
-              <p className="tag">Sea</p>
-              <p className="tag">Build</p>
-              <p className="tag">Play</p>
-              <p className="tag">Coffee</p>
-              <p className="tag">Tea</p>
-              <p className="tag">Cigarette</p>
+              {hobbiesAndInterestsToTags}
             </div>
             <div className="profile-details-row social-links">
-              <a href="facebook.com">
+              <a href={website} target="_blank">
                 <CgWebsite />
               </a>
-              <a href="facebook.com">
+              <a href={facebook} target="_blank">
                 <GrFacebookOption />
               </a>
-              <a href="instagram.com">
+              <a href={instagram} target="_blank">
                 <RiInstagramLine />
               </a>
-              <a href="facebook.com">
+              <a href={twitter} target="_blank">
                 <FaTwitter />
               </a>
-              <a href="facebook.com">
+              <a href={youtube} target="_blank">
                 <FiYoutube />
               </a>
-              <a href="facebook.com">
+              <a href={linkedin} target="_blank">
                 <FaLinkedinIn />
               </a>
-              <a href="facebook.com">
+              <a href={pinterest} target="_blank">
                 <FaPinterestP />
               </a>
             </div>
