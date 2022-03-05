@@ -1,10 +1,11 @@
 @use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
 
-.my-profile {
+.profile {
   // background-color: lightblue;
   color: $txt-dark;
 
-  .my-profile-header {
+  .profile-header {
     display: flex;
 
     .user-summary {
@@ -54,14 +55,7 @@
     .about-me-container {
       flex-basis: 70%;
       margin: 1em;
-      padding: 1em;
-      border-radius: 0.5em;
-      background: linear-gradient(
-        0deg,
-        rgba(255, 192, 203, 0.5) 0%,
-        rgba(255, 192, 203, 0.75) 50%,
-        pink 100%
-      );
+      @include card-pink;
       display: flex;
       align-items: center;
       position: relative;
@@ -96,6 +90,7 @@
 
           .profile-details-col {
             border-spacing: 0.75rem 0;
+            border-left: 1px solid $gray-light;
 
             .profile-items {
               .profile-item-title {
@@ -118,7 +113,7 @@
           justify-content: center;
 
           .tag {
-            background-color: $black;
+            background-color: $gray;
             color: $white;
             padding: 0.25rem 0.5rem;
             border-radius: 0.25rem;

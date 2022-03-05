@@ -11,7 +11,8 @@
 
 /* components imports */
 @use "./components/buttons";
-@use "./components/myProfile";
+@use "./components/profile";
+@use "./components/createOrUpdateProfile";
 
 /* pages imports */
 @use "./pages/homepage";

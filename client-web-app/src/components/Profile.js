@@ -12,14 +12,14 @@ import { FiYoutube } from "react-icons/fi";
 // Images
 import UserImage from "../assets/images/user-image-sample.jpg";
 
-const MyProfile = ({ profile }) => {
+const Profile = ({ profile }) => {
   if (profile === null) {
     return <Navigate to="create" />;
   }
 
   return (
-    <div className="my-profile">
-      <div className="my-profile-header">
+    <div className="profile">
+      <div className="profile-header">
         <div className="user-summary">
           <img
             src={UserImage}
@@ -27,7 +27,7 @@ const MyProfile = ({ profile }) => {
             className="user-profile-picture"
           />
           <h2 className="user-name">Dewan Wakil Ahmed</h2>
-          <button className="btn-follow btn">Follow</button>
+          <button className="btn btn-black">Follow</button>
           <div className="profile-summary">
             <div className="summary-item">
               <p className="summary-item-title">Products</p>
@@ -44,8 +44,8 @@ const MyProfile = ({ profile }) => {
           </div>
         </div>
         <div className="about-me-container">
-          <Link to="update" className="btn btn-action btn-update-profile">
-            Update Profile
+          <Link to="update" className="btn btn-orange btn-update-profile">
+            Edit Profile
           </Link>
           <h2 className="about-me-title">About me</h2>
           <div className="profile-details general-info">
@@ -120,7 +120,7 @@ const MyProfile = ({ profile }) => {
   );
 };
 
-MyProfile.propTypes = {
+Profile.propTypes = {
   profile: PropTypes.object,
 };
 
@@ -128,4 +128,4 @@ const mapStateToProps = (state) => ({
   profile: state.auth.profile,
 });
 
-export default connect(mapStateToProps)(MyProfile);
+export default connect(mapStateToProps)(Profile);

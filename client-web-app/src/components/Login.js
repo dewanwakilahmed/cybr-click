@@ -75,7 +75,7 @@ const Login = ({ isAuthenticated, loginUser }) => {
         </div>
         <p className="forgot-password">Forgot Password</p>
       </div>
-      <input type="submit" value="Continue" className="btn btn-action" />
+      <input type="submit" value="Continue" className="btn btn-orange" />
       <p className="change-form-type">
         Don't have an account? &nbsp;
         <Link to="/register" className="sign-up-link">

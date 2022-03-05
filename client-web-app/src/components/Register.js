@@ -89,7 +89,7 @@ const Register = ({ isAuthenticated, setAlert, registerUser }) => {
         />
         <img src={PasswordIcon} alt="password icon" />
       </div>
-      <input type="submit" value="Continue" className="btn btn-action" />
+      <input type="submit" value="Continue" className="btn btn-orange" />
       <p className="change-form-type">
         Already have an account? &nbsp;
         <Link to="/login" className="sign-up-link">

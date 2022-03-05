@@ -1,0 +1,101 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+.create-update-profile-form {
+  @include card-pink;
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+
+  .form-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    // background-color: violet;
+
+    .form-col {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75em;
+      border-left: 1px solid $gray-light;
+      padding-left: 0.75rem;
+    }
+
+    .form-control {
+      display: flex;
+      gap: 0.75rem;
+      justify-content: space-between;
+      align-items: center;
+
+      label {
+        white-space: nowrap;
+      }
+
+      input,
+      select {
+        border: none;
+        padding: 0.25rem 0.5rem;
+        width: 17.5rem;
+        color: $txt-dark;
+        border-radius: 0.25rem;
+
+        &:focus {
+          outline: none;
+          background-color: $orange;
+          color: $white;
+        }
+      }
+    }
+  }
+
+  .hobbies-and-interests-row {
+    // background-color: indigo;
+
+    .form-control {
+      // background-color: lightblue;
+      width: 100%;
+
+      input {
+        width: 100%;
+      }
+    }
+  }
+
+  .social-row {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    // background-color: lightblue;
+
+    .form-row-row {
+      // background-color: orange;
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+
+      .form-col {
+        .form-control {
+          input {
+            width: 22.5rem;
+          }
+        }
+      }
+
+      .personal-site {
+        // background-color: orange;
+        width: 100%;
+        justify-content: center;
+
+        input {
+          width: 22.5rem;
+        }
+      }
+    }
+  }
+
+  .action-row {
+    .btn-form-submit {
+      width: min-content;
+    }
+  }
+}

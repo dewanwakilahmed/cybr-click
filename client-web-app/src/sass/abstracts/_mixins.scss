@@ -11,3 +11,14 @@
   align-items: center;
   justify-content: center;
 }
+
+@mixin card-pink {
+  padding: 1em;
+  border-radius: 0.5em;
+  background: linear-gradient(
+    0deg,
+    rgba(255, 192, 203, 0.5) 0%,
+    rgba(255, 192, 203, 0.75) 50%,
+    pink 100%
+  );
+}

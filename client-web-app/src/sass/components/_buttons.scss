@@ -4,9 +4,10 @@
   border: none;
   border-radius: 0.5em;
   cursor: pointer;
+  text-decoration: none;
 }
 
-.btn-action {
+.btn-orange {
   background-color: $orange;
   color: $white;
   width: 100%;
@@ -21,7 +22,7 @@
   }
 }
 
-.btn-follow {
+.btn-black {
   background-color: $black;
   color: $white;
   padding: 0.5rem 2rem;

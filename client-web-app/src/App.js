@@ -26,7 +26,7 @@ import MyProfileTab from "./pages/dashboard-tabs/MyProfileTab";
 import Login from "./components/Login";
 import Register from "./components/Register";
 import CreateOrUpdateProfile from "./components/CreateOrUpdateProfile";
-import MyProfile from "./components/MyProfile";
+import Profile from "./components/Profile";
 
 // Main SASS
 import "./sass/main.scss";
@@ -65,8 +65,8 @@ const App = () => {
             <Route path="videos" element={<VideosTab />} />
             <Route path="ebooks" element={<EbooksTab />} />
             <Route path="my-profile" element={<MyProfileTab />}>
-              <Route index element={<MyProfile />} />
-              <Route path="me" element={<MyProfile />} />
+              <Route index element={<Profile />} />
+              <Route path="me" element={<Profile />} />
               <Route path="update" element={<CreateOrUpdateProfile />} />
               <Route path="create" element={<CreateOrUpdateProfile />} />
             </Route>
