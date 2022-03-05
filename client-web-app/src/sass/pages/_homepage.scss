@@ -4,7 +4,7 @@
 .homepage {
   display: flex;
   min-height: 100vh;
-  color: $gray-light;
+  color: $gray;
   position: relative;
 
   .cybr-click-logo {
@@ -29,7 +29,7 @@
       }
 
       .greeting {
-        color: $black;
+        color: $txt-dark;
       }
 
       .msg-to-user {
@@ -47,17 +47,19 @@
         position: relative;
 
         label {
+          font-size: 0.875rem;
           position: absolute;
           background-color: $white;
-          padding: 0 0.75rem;
+          padding: 0 0.5rem;
           top: -0.75em;
-          left: 1.5em;
+          left: 1.25em;
         }
 
         input {
           width: 100%;
-          padding: 0.2rem;
+          padding: 0.1rem 0.2rem;
           border: none;
+          color: $txt-dark;
 
           &:focus {
             outline: none;

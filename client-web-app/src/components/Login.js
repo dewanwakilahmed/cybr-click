@@ -39,9 +39,7 @@ const Login = ({ isAuthenticated, loginUser }) => {
     <form className="home-form" onSubmit={(e) => submitHandler(e)}>
       <p className="form-type">Sign In</p>
       <h1 className="greeting">Welcome Back</h1>
-      <p className="msg-to-user">
-        Sign in with your email and password or continue with social media
-      </p>
+      <p className="msg-to-user">Sign in with your email and password.</p>
       <div className="form-control">
         <label htmlFor="email">Email</label>
         <input
