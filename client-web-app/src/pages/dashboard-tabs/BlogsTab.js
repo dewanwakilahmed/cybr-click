@@ -1,5 +1,7 @@
+import { Outlet } from "react-router-dom";
+
 const BlogsTab = () => {
-  return <div>BlogsTab</div>;
+  return <Outlet />;
 };
 
 export default BlogsTab;

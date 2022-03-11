@@ -27,6 +27,8 @@ import Login from "./components/Login";
 import Register from "./components/Register";
 import CreateOrUpdateProfile from "./components/CreateOrUpdateProfile";
 import Profile from "./components/Profile";
+import Blogs from "./components/Blogs";
+import CreateBlogPost from "./components/CreateBlogPost";
 
 // Main SASS
 import "./sass/main.scss";
@@ -61,7 +63,10 @@ const App = () => {
           >
             <Route index element={<HomeTab />} />
             <Route path="home" element={<HomeTab />} />
-            <Route path="blogs" element={<BlogsTab />} />
+            <Route path="blogs" element={<BlogsTab />}>
+              <Route index element={<Blogs />} />
+              <Route path="create-blog" element={<CreateBlogPost />} />
+            </Route>
             <Route path="videos" element={<VideosTab />} />
             <Route path="ebooks" element={<EbooksTab />} />
             <Route path="my-profile" element={<MyProfileTab />}>
