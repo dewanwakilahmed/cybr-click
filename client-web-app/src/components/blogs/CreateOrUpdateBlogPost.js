@@ -5,7 +5,7 @@ import { Editor } from "react-draft-wysiwyg";
 
 import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
 
-const RichTextEditor = () => {
+const CreateOrUpdateBlogPost = () => {
   const [editorState, setEditorState] = useState(() =>
     EditorState.createEmpty()
   );
@@ -16,7 +16,18 @@ const RichTextEditor = () => {
 
   return (
     <div className="create-blog-post">
-      <h2 className="create-blog-post-title">Create a Blog Post</h2>
+      {/* <h2 className="create-blog-post-title">Create a Blog Post</h2> */}
+      <input type="text" className="new-blog-title" placeholder="Blog Title" />
+      {/* <div className="blog-cover-image-and-info-container">
+        <div className="blog-info">
+          <p># Category</p>
+          <p># Interest</p>
+          <p># Topic</p>
+        </div>
+        <div className="blog-cover-image">
+          <img src="" alt="" className="new-blog-cover-image" />
+        </div>
+      </div> */}
       <div className="rich-text-editor">
         <Editor
           editorState={editorState}
@@ -44,4 +55,4 @@ const RichTextEditor = () => {
   );
 };
 
-export default RichTextEditor;
+export default CreateOrUpdateBlogPost;

@@ -13,6 +13,15 @@
     // color: $gray;
   }
 
+  .new-blog-title {
+    border: 1px solid $gray-light;
+    border-radius: 0.5rem;
+    padding: 0.2rem 0.5rem;
+    outline: none;
+    text-align: center;
+    font-size: 1.15rem;
+  }
+
   .rich-text-editor {
     // background-color: violet;
 

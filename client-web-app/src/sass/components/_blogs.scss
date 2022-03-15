@@ -1,0 +1,41 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+.blogs {
+  // background-color: lightblue;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+
+  .blogs-header {
+    // background-color: violet;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .blogs-nav {
+      display: flex;
+      gap: 0.25rem;
+
+      .blogs-nav-items {
+        text-decoration: none;
+        color: inherit;
+        padding: 0.25rem 0.5rem;
+        border-radius: 0.25rem;
+
+        &:hover {
+          background-color: lightblue;
+        }
+      }
+
+      .active {
+        background-color: blue;
+        color: white;
+      }
+    }
+
+    .btn-create-new-post {
+      width: min-content;
+    }
+  }
+}

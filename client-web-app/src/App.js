@@ -27,8 +27,11 @@ import Login from "./components/Login";
 import Register from "./components/Register";
 import CreateOrUpdateProfile from "./components/CreateOrUpdateProfile";
 import Profile from "./components/Profile";
-import Blogs from "./components/Blogs";
-import CreateBlogPost from "./components/CreateBlogPost";
+import Blogs from "./components/blogs/Blogs";
+import SubscribedBlogSeries from "./components/blogs/SubscribedBlogSeries";
+import LatestBlogs from "./components/blogs/LatestBlogs";
+import TopBlogs from "./components/blogs/TopBlogs";
+import CreateOrUpdateBlogPost from "./components/blogs/CreateOrUpdateBlogPost";
 
 // Main SASS
 import "./sass/main.scss";
@@ -64,8 +67,13 @@ const App = () => {
             <Route index element={<HomeTab />} />
             <Route path="home" element={<HomeTab />} />
             <Route path="blogs" element={<BlogsTab />}>
-              <Route index element={<Blogs />} />
-              <Route path="create-blog" element={<CreateBlogPost />} />
+              <Route path="" element={<Blogs />}>
+                <Route index element={<SubscribedBlogSeries />} />
+                <Route path="subscribed" element={<SubscribedBlogSeries />} />
+                <Route path="latest" element={<LatestBlogs />} />
+                <Route path="top" element={<TopBlogs />} />
+              </Route>
+              <Route path="create-blog" element={<CreateOrUpdateBlogPost />} />
             </Route>
             <Route path="videos" element={<VideosTab />} />
             <Route path="ebooks" element={<EbooksTab />} />

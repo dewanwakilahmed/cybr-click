@@ -118,15 +118,15 @@ const DashboardPage = ({ logoutUser }) => {
           <p className="copyright">Copyright © 2022 - Cybrclick.com</p>
         </div>
         <div className="platform-social-links">
-          <p>Find on us:</p>
+          <p>Find us on:</p>
           <a href="www.facebook.com" target="_blank">
-            <FaFacebookSquare />
+            <FaFacebookSquare className="platform-social-links-icons" />
           </a>
           <a href="www.instagram.com" target="_blank">
-            <RiInstagramFill />
+            <RiInstagramFill className="platform-social-links-icons" />
           </a>
           <a href="www.twitter.com" target="_blank">
-            <FaTwitterSquare />
+            <FaTwitterSquare className="platform-social-links-icons" />
           </a>
         </div>
       </footer>
