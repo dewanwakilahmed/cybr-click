@@ -31,6 +31,7 @@ import Blogs from "./components/blogs/Blogs";
 import SubscribedBlogSeries from "./components/blogs/SubscribedBlogSeries";
 import LatestBlogs from "./components/blogs/LatestBlogs";
 import TopBlogs from "./components/blogs/TopBlogs";
+import ViewBlogPost from "./components/blogs/ViewBlogPost";
 import CreateOrUpdateBlogPost from "./components/blogs/CreateOrUpdateBlogPost";
 
 // Main SASS
@@ -73,6 +74,7 @@ const App = () => {
                 <Route path="latest" element={<LatestBlogs />} />
                 <Route path="top" element={<TopBlogs />} />
               </Route>
+              <Route path="view-blog" element={<ViewBlogPost />} />
               <Route path="create-blog" element={<CreateOrUpdateBlogPost />} />
             </Route>
             <Route path="videos" element={<VideosTab />} />

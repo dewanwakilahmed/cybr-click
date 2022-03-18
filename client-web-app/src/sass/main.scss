@@ -14,7 +14,7 @@
 @use "./components/profile";
 @use "./components/createOrUpdateProfile";
 @use "./components/blogs";
-@use "./components/createBlogPost";
+@use "./components/createOrUpdateBlogPost";
 
 /* pages imports */
 @use "./pages/homepage";
