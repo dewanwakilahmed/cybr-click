@@ -9,6 +9,7 @@ const connectDB = require("./src/configs/db.config");
 const userRoutes = require("./src/routes/api/user");
 const authRoutes = require("./src/routes/api/auth");
 const profileRoutes = require("./src/routes/api/profile");
+const blogRoutes = require("./src/routes/api/blog.routes");
 
 const app = express();
 
@@ -26,6 +27,7 @@ app.get("/", (req, res) =>
 app.use("/api/user", userRoutes);
 app.use("/api/auth", authRoutes);
 app.use("/api/profile", profileRoutes);
+app.use("/api/blog", blogRoutes);
 
 const PORT = process.env.PORT || 5000;
 
