@@ -5,37 +5,57 @@
   // background-color: lightblue;
   display: flex;
   flex-direction: column;
-  gap: 1em;
+  gap: 0.5em;
 
   .blogs-header {
-    // background-color: violet;
+    font-size: 0.875rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding-bottom: 0.5em;
+    border-bottom: 1px solid $gray-light;
 
     .blogs-nav {
+      // background-color: violet;
       display: flex;
       gap: 0.25rem;
 
       .blogs-nav-items {
         text-decoration: none;
         color: inherit;
-        padding: 0.25rem 0.5rem;
+        padding: 0.5rem 1rem;
         border-radius: 0.25rem;
 
         &:hover {
-          background-color: lightblue;
+          background-color: $gray-light;
+          color: $white;
         }
       }
 
       .active {
-        background-color: blue;
+        background-color: $gray;
         color: white;
       }
     }
 
-    .btn-create-new-post {
-      width: min-content;
+    .filter-blogs {
+      // background-color: lightblue;
+      flex-grow: 1;
+      display: flex;
+      gap: 1.25em;
+      align-items: center;
+      justify-content: center;
+      border-left: 1px solid $gray-light;
+      border-right: 1px solid $gray-light;
+      margin: 0 1em;
+    }
+
+    .create-blog-btn-container {
+      // background-color: red;
+
+      .btn-create-new-post {
+        width: min-content;
+      }
     }
   }
 }

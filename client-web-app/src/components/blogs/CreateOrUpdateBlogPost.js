@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import axios from "axios";
 import { EditorState } from "draft-js";
 import { Editor } from "react-draft-wysiwyg";
 
@@ -8,6 +9,38 @@ import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
 import UploadImgIcon from "../../assets/icons/upload-img-icon.png";
 
 const CreateOrUpdateBlogPost = () => {
+  let blogCategories = [];
+  let blogTopics = [];
+
+  const fetchBlogCategories = async () => {
+    try {
+      const response = await axios.get("/api/blog/categories");
+      blogCategories = response.data;
+      console.log(blogCategories);
+      console.log(typeof blogCategories);
+    } catch (error) {
+      console.error(error.message);
+    }
+  };
+
+  const fetchBlogTopics = async () => {
+    try {
+      const response = await axios.get("/api/blog/topics");
+      blogTopics = response.data;
+    } catch (error) {
+      console.error(error.message);
+    }
+  };
+
+  useEffect(() => {
+    fetchBlogCategories();
+    fetchBlogTopics();
+  }, []);
+
+  const [blogPost, setBlogPost] = useState({
+    blogTitle: "",
+  });
+
   const [imgURL, setImgURL] = useState();
 
   const selectImageHandler = (e) => {
@@ -28,6 +61,11 @@ const CreateOrUpdateBlogPost = () => {
     setEditorState(state);
   };
 
+  let blog2Categories = [
+    { _id: "1", name: "Food" },
+    { _id: "2", name: "Travel" },
+  ];
+
   return (
     <div className="create-blog-post">
       <input type="text" className="new-blog-title" placeholder="Blog Title" />
@@ -36,10 +74,13 @@ const CreateOrUpdateBlogPost = () => {
           <div className="filter-control">
             <label htmlFor="blog_categories">Category: </label>
             <select name="blogs_categories" id="blogs_categories">
-              <option value="all">All</option>
+              {blog2Categories.map((item) => (
+                <option>{item.name}</option>
+              ))}
+              {/* <option value="all">All</option>
               <option value="technology">Technology</option>
               <option value="education">Education</option>
-              <option value="medicine">Medicine</option>
+              <option value="medicine">Medicine</option> */}
             </select>
           </div>
           <div className="filter-control">

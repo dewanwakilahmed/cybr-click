@@ -29,8 +29,8 @@ import CreateOrUpdateProfile from "./components/CreateOrUpdateProfile";
 import Profile from "./components/Profile";
 import Blogs from "./components/blogs/Blogs";
 import SubscribedBlogSeries from "./components/blogs/SubscribedBlogSeries";
-import LatestBlogs from "./components/blogs/LatestBlogs";
-import TopBlogs from "./components/blogs/TopBlogs";
+import NewestBlogs from "./components/blogs/NewestBlogs";
+import MostViewedBlogs from "./components/blogs/MostViewedBlogs";
 import ViewBlogPost from "./components/blogs/ViewBlogPost";
 import CreateOrUpdateBlogPost from "./components/blogs/CreateOrUpdateBlogPost";
 
@@ -71,8 +71,8 @@ const App = () => {
               <Route path="" element={<Blogs />}>
                 <Route index element={<SubscribedBlogSeries />} />
                 <Route path="subscribed" element={<SubscribedBlogSeries />} />
-                <Route path="latest" element={<LatestBlogs />} />
-                <Route path="top" element={<TopBlogs />} />
+                <Route path="newest" element={<NewestBlogs />} />
+                <Route path="most-viewed" element={<MostViewedBlogs />} />
               </Route>
               <Route path="view-blog" element={<ViewBlogPost />} />
               <Route path="create-blog" element={<CreateOrUpdateBlogPost />} />

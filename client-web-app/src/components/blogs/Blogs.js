@@ -8,11 +8,11 @@ const Blogs = () => {
           <NavLink to="subscribed" className="blogs-nav-items">
             Subscribed
           </NavLink>
-          <NavLink to="latest" className="blogs-nav-items">
-            Latest
+          <NavLink to="newest" className="blogs-nav-items">
+            Newest
           </NavLink>
-          <NavLink to="top" className="blogs-nav-items">
-            Top
+          <NavLink to="most-viewed" className="blogs-nav-items">
+            Most Viewed
           </NavLink>
         </nav>
         <form className="filter-blogs">
@@ -23,15 +23,6 @@ const Blogs = () => {
               <option value="technology">Technology</option>
               <option value="education">Education</option>
               <option value="medicine">Medicine</option>
-            </select>
-          </div>
-          <div className="form-control">
-            <label htmlFor="blog_categories">Interest: </label>
-            <select name="blogs_categories" id="blogs_categories">
-              <option value="all">All</option>
-              <option value="interest_1">Interest 1</option>
-              <option value="interest_2">Interest 2</option>
-              <option value="interest_3">Interest 3</option>
             </select>
           </div>
           <div className="form-control">
@@ -49,9 +40,11 @@ const Blogs = () => {
             className="btn btn-black btn-filter"
           />
         </form>
-        <Link to="create-blog" className="btn btn-orange btn-create-new-post">
-          Create New Post
-        </Link>
+        <div className="create-blog-btn-container">
+          <Link to="create-blog" className="btn btn-orange btn-create-new-post">
+            Create New Post
+          </Link>
+        </div>
       </div>
       <div className="blogs-body">
         <Outlet />
