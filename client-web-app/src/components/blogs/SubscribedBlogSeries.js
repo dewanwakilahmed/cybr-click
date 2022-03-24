@@ -1,7 +1,12 @@
-import React from "react";
+import BlogPostCard from "./BlogPostCard";
 
 const SubscribedBlogSeries = () => {
-  return <div>Subscribed Blog Series</div>;
+  return (
+    <>
+      <BlogPostCard />
+      <BlogPostCard />
+    </>
+  );
 };
 
 export default SubscribedBlogSeries;

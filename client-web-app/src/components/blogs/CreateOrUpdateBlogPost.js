@@ -84,15 +84,6 @@ const CreateOrUpdateBlogPost = () => {
             </select>
           </div>
           <div className="filter-control">
-            <label htmlFor="blog_categories">Interest: </label>
-            <select name="blogs_categories" id="blogs_categories">
-              <option value="all">All</option>
-              <option value="interest_1">Interest 1</option>
-              <option value="interest_2">Interest 2</option>
-              <option value="interest_3">Interest 3</option>
-            </select>
-          </div>
-          <div className="filter-control">
             <label htmlFor="blog_categories">Topic: </label>
             <select name="blogs_categories" id="blogs_categories">
               <option value="all">All</option>

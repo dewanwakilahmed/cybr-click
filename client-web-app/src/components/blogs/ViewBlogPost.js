@@ -1,7 +1,5 @@
-import React from "react";
-
 const ViewBlogPost = () => {
-  return <div>ViewBlogPost</div>;
+  return <div>View Blog Post</div>;
 };
 
 export default ViewBlogPost;

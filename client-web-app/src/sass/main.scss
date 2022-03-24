@@ -13,8 +13,9 @@
 @use "./components/buttons";
 @use "./components/profile";
 @use "./components/createOrUpdateProfile";
-@use "./components/blogs";
-@use "./components/createOrUpdateBlogPost";
+@use "./components/blogs/blogs";
+@use "./components/blogs/createOrUpdateBlogPost";
+@use "./components/blogs/blogPostCard";
 
 /* pages imports */
 @use "./pages/homepage";

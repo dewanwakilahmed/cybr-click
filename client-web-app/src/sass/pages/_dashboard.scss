@@ -112,7 +112,7 @@
         .nav-tab {
           text-decoration: none;
           color: inherit;
-          border-radius: 0.7em;
+          border-radius: 0.25em;
           padding: 0.5em 1em;
           display: flex;
           gap: 0.5rem;
@@ -122,10 +122,10 @@
 
           &:hover {
             background-color: $gray-light;
-            color: $black;
+            color: $white;
 
             .nav-tab-icon {
-              color: $black;
+              color: $white;
             }
           }
         }

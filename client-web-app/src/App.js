@@ -31,7 +31,7 @@ import Blogs from "./components/blogs/Blogs";
 import SubscribedBlogSeries from "./components/blogs/SubscribedBlogSeries";
 import NewestBlogs from "./components/blogs/NewestBlogs";
 import MostViewedBlogs from "./components/blogs/MostViewedBlogs";
-import ViewBlogPost from "./components/blogs/ViewBlogPost";
+import ViewBlogPost from "./components/blogs/BlogPostCard";
 import CreateOrUpdateBlogPost from "./components/blogs/CreateOrUpdateBlogPost";
 
 // Main SASS

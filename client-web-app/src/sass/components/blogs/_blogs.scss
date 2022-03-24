@@ -1,5 +1,5 @@
-@use "../abstracts/variables" as *;
-@use "../abstracts/mixins" as *;
+@use "../../abstracts/variables" as *;
+@use "../../abstracts/mixins" as *;
 
 .blogs {
   // background-color: lightblue;
@@ -27,19 +27,21 @@
         border-radius: 0.25rem;
 
         &:hover {
-          background-color: $gray-light;
+          background-color: $gray;
           color: $white;
         }
       }
 
       .active {
-        background-color: $gray;
+        text-decoration: none;
+        background-color: $gray-light;
         color: white;
       }
     }
 
     .filter-blogs {
       // background-color: lightblue;
+      font-size: 0.8rem;
       flex-grow: 1;
       display: flex;
       gap: 1.25em;
@@ -57,5 +59,12 @@
         width: min-content;
       }
     }
+  }
+
+  .blogs-body {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    // overflow-y: scroll;
   }
 }
