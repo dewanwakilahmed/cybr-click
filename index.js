@@ -1,7 +1,5 @@
 const express = require("express");
-
-// Change Default Node Config Directory
-process.env["NODE_CONFIG_DIR"] = __dirname + "/src/configs";
+const dotenv = require("dotenv").config();
 
 const connectDB = require("./src/configs/db.config");
 
