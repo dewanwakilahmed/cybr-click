@@ -16,6 +16,7 @@
 @use "./components/blogs/blogs";
 @use "./components/blogs/createOrUpdateBlogPost";
 @use "./components/blogs/blogPostCard";
+@use "./components/blogs/viewBlogPost";
 
 /* pages imports */
 @use "./pages/homepage";
