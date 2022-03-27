@@ -1,3 +1,4 @@
+const path = require("path");
 const express = require("express");
 const dotenv = require("dotenv").config();
 
@@ -17,9 +18,20 @@ connectDB();
 // Initialize Middlewawre
 app.use(express.json({ extended: false })); // Request & Body Validation
 
-app.get("/", (req, res) =>
-  res.send("CYBR CLICK App API is running and ready to process requests...")
-);
+// Serve on Home Root
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static(path.join(__dirname, "./client-web-app/build")));
+
+  app.get("*", (req, res) => {
+    res.sendFile(
+      path.resolve(__dirname, "./", "client-web-app", "build", "index.html")
+    );
+  });
+} else {
+  app.get("/", (req, res) =>
+    res.send("CYBR CLICK API is running and is ready to process requests.")
+  );
+}
 
 // CYBR CLICK Server Routes
 app.use("/api/user", userRoutes);
