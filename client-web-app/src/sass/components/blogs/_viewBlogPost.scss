@@ -38,9 +38,9 @@
 
     .blog-post-cover-image {
       border-radius: 1em;
-      height: 15em;
+      height: 17.5em;
       object-fit: cover;
-      width: 90%;
+      width: 100%;
     }
   }
 
@@ -85,13 +85,6 @@
         // font-weight: 900;
       }
 
-      .blog-post-dates {
-        display: flex;
-        gap: 0.35rem;
-        justify-content: center;
-        align-items: center;
-      }
-
       .blog-post-engagements {
         display: flex;
         gap: 0.35rem;
@@ -109,5 +102,18 @@
     // background-color: lightblue;
     text-align: justify;
     font-weight: 400;
+  }
+
+  .blog-post-dates {
+    // background-color: lightblue;
+    font-weight: 300;
+    font-size: 0.875rem;
+    display: flex;
+    gap: 0.35rem;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
   }
 }

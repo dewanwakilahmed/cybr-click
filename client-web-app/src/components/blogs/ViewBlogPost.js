@@ -34,15 +34,6 @@ const ViewBlogPost = () => {
           <p className="blog-post-creator-user-name">Dewan Wakil Ahmed</p>
         </div>
         <div className="blog-post-metrics">
-          <div className="blog-post-dates">
-            <p className="blog-post-pub-on">
-              Published: <span className="metrics-number">20/03/22</span>
-            </p>
-            <p className="divider">|</p>
-            <p className="blog-post-updated-on">
-              Updated: <span className="metrics-number">24/03/22</span>
-            </p>
-          </div>
           <div className="blog-post-engagements">
             <p className="blog-post-views">
               Views: <span className="metrics-number">274k</span>
@@ -81,6 +72,15 @@ const ViewBlogPost = () => {
           cursus a lacus. Aenean id ex vulputate nisl bibendum faucibus.
           Suspendisse potenti. Sed accumsan cursus ligula, sed fermentum metus
           mattis gravida.
+        </p>
+      </div>
+      <div className="blog-post-dates">
+        <p className="blog-post-pub-on">
+          Published on: <span className="metrics-number">20/03/22</span>
+        </p>
+        <p className="divider">|</p>
+        <p className="blog-post-updated-on">
+          Updated on: <span className="metrics-number">24/03/22</span>
         </p>
       </div>
     </div>
