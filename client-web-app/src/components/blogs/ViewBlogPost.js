@@ -5,6 +5,18 @@ import UserImage from "../../assets/images/user-image-sample.jpg";
 const ViewBlogPost = () => {
   return (
     <div className="view-blog-post">
+      <div className="view-blog-post-actions-header-actions">
+        <div className="subscribe-button-container">
+          <button className="btn btn-orange btn-subscribe">Subscribe</button>
+        </div>
+        <div className="create-button-container-and-filters">
+          <div className="filters">
+            <p className="hashtag">#Category</p>
+            <p className="hashtag">#Topic</p>
+          </div>
+          <button className="btn btn-orange btn-create">Create +</button>
+        </div>
+      </div>
       <div className="blog-post-cover-image-container">
         <img
           src={BlogCoverImage}
@@ -20,14 +32,6 @@ const ViewBlogPost = () => {
             className="blog-post-creator-user-image"
           />
           <p className="blog-post-creator-user-name">Dewan Wakil Ahmed</p>
-        </div>
-        <div className="blog-post-title-hashtags-container">
-          <h2 className="blog-post-title">Travel to South-East Asia</h2>
-          <div className="hashtags-container">
-            <p className="hashtag">#travel</p>
-            <p className="hashtag">#south-east-asia</p>
-            <p className="hashtag">#asia</p>
-          </div>
         </div>
         <div className="blog-post-metrics">
           <div className="blog-post-dates">
@@ -54,6 +58,7 @@ const ViewBlogPost = () => {
           </div>
         </div>
       </div>
+      <h2 className="blog-post-title">Travel to South-East Asia</h2>
       <div className="blog-post-content">
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ac

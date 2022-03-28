@@ -6,20 +6,21 @@
   cursor: pointer;
   text-decoration: none;
   white-space: nowrap;
+  font-size: 0.875rem;
 }
 
 .btn-orange {
   background-color: $orange;
   color: $white;
   width: 100%;
-  padding: 0.5rem 1rem;
-  -webkit-box-shadow: 0px 0px 5px 0px $orange;
-  box-shadow: 0px 0px 5px 0px $orange;
+  padding: 0.35rem 0.7rem;
+  -webkit-box-shadow: 0px 0px 2.5px 0px $orange;
+  box-shadow: 0px 0px 2.5px 0px $orange;
 
   &:hover {
     background-color: $orange-hover;
-    -webkit-box-shadow: 0px 0px 10px 0px $orange;
-    box-shadow: 0px 0px 10px 0px $orange;
+    -webkit-box-shadow: 0px 0px 5px 0px $orange;
+    box-shadow: 0px 0px 5px 0px $orange;
   }
 }
 
@@ -27,12 +28,12 @@
   background-color: $black;
   color: $white;
   padding: 0.5rem 2rem;
-  -webkit-box-shadow: 0px 0px 5px 0px $black;
-  box-shadow: 0px 0px 5px 0px $black;
+  -webkit-box-shadow: 0px 0px 2.5px 0px $black;
+  box-shadow: 0px 0px 2.5px 0px $black;
 
   &:hover {
     background-color: $black-hover;
-    -webkit-box-shadow: 0px 0px 10px 0px $black;
-    box-shadow: 0px 0px 10px 0px $black;
+    -webkit-box-shadow: 0px 0px 5px 0px $black;
+    box-shadow: 0px 0px 5px 0px $black;
   }
 }
