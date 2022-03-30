@@ -69,7 +69,7 @@ const ViewBlogPost = () => {
           nibh. Proin facilisis eros sed placerat ultrices. Donec tristique dui
           ut purus rhoncus, ac lobortis ligula iaculis. Suspendisse at neque ac
           justo consequat interdum. Nullam arcu nulla, mollis in facilisis nec,
-          cursus a lacus. Aenean id ex vulputate nisl bibendum faucibus.
+          cursus a lacus. Aenean id ex vulputate nisl bibclearendum faucibus.
           Suspendisse potenti. Sed accumsan cursus ligula, sed fermentum metus
           mattis gravida.
         </p>
