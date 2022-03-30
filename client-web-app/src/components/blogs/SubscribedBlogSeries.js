@@ -5,6 +5,10 @@ const SubscribedBlogSeries = () => {
     <>
       <BlogPostCard />
       <BlogPostCard />
+      <BlogPostCard />
+      <BlogPostCard />
+      <BlogPostCard />
+      <BlogPostCard />
     </>
   );
 };

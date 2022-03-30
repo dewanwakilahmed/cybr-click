@@ -62,9 +62,9 @@
   }
 
   .blogs-body {
-    display: flex;
-    flex-direction: column;
-    gap: 1em;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.875em;
     // overflow-y: scroll;
   }
 }
