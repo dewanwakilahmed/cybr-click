@@ -1,10 +1,12 @@
 import { NavLink, Link, Outlet } from "react-router-dom";
 
+import BlogPostCard from "./BlogPostCard";
+
 const Blogs = () => {
   return (
     <div className="blogs">
       <div className="blogs-header">
-        <nav className="blogs-nav">
+        {/* <nav className="blogs-nav">
           <NavLink to="subscribed" className="blogs-nav-items">
             Subscribed
           </NavLink>
@@ -39,15 +41,21 @@ const Blogs = () => {
             value="Filter"
             className="btn btn-black btn-filter"
           />
-        </form>
+        </form> */}
+        <button className="btn btn-orange btn-subscribe">Subscribe</button>
         <div className="create-blog-btn-container">
           <Link to="create-blog" className="btn btn-orange btn-create-new-post">
-            Create New Post
+            Create +
           </Link>
         </div>
       </div>
       <div className="blogs-body">
-        <Outlet />
+        <div className="trending-blog-container">
+          <BlogPostCard className="trending-blog" />
+        </div>
+        <div className="other-blogs">
+          <Outlet />
+        </div>
       </div>
     </div>
   );

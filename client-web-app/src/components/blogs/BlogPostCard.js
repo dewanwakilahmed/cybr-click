@@ -20,14 +20,19 @@ const BlogPostCard = () => {
         </div>
         <h2 className="blog-post-title">Travel to South-East Asia</h2>
         <div className="blog-post-creator-details">
-          <img
-            src={UserImage}
-            alt="user"
-            className="blog-post-creator-user-image"
-          />
-          <p className="blog-post-creator-user-name">Dewan Wakil Ahmed</p>
+          <div className="creator-details">
+            <img
+              src={UserImage}
+              alt="user"
+              className="blog-post-creator-user-image"
+            />
+            <p className="blog-post-creator-user-name">Dewan Wakil Ahmed</p>
+          </div>
+          <div className="views">
+            Views: <span className="metrics-number">274k</span>
+          </div>
         </div>
-        <div className="blog-post-dates">
+        {/* <div className="blog-post-dates">
           <p className="blog-post-pub-on">
             Published: <span className="metrics-number">20/03/22</span>
           </p>
@@ -35,11 +40,9 @@ const BlogPostCard = () => {
           <p className="blog-post-updated-on">
             Updated: <span className="metrics-number">24/03/22</span>
           </p>
-        </div>
-        <div className="blog-post-engagements">
-          <p className="blog-post-views">
-            Views: <span className="metrics-number">274k</span>
-          </p>
+        </div> */}
+        {/* <div className="blog-post-engagements">
+          <p className="blog-post-views"></p>
           <p className="divider">|</p>
           <p className="blog-post-likes">
             Likes: <span className="metrics-number">154k</span>
@@ -48,7 +51,7 @@ const BlogPostCard = () => {
           <p className="blog-post-comments">
             Comments: <span className="metrics-number">98k</span>
           </p>
-        </div>
+        </div> */}
       </div>
     </Link>
   );
